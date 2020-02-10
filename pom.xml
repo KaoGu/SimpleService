@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lyt.simpleservice</groupId>
-	<artifactId>root</artifactId>
+	<artifactId>simpleservice</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>SimpleService</name>
 	<description>Demo project for Spring Boot</description>
