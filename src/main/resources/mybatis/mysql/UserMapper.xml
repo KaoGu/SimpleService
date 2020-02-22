@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lyt.simpleservice.mybatis.mapper.UserMapper">
+
+    <resultMap id="UserInfo" type="com.lyt.simpleservice.mybatis.domain.UserInfo">
+        <result column="id" jdbcType="VARCHAR" property="id" />
+        <result column="name" jdbcType="VARCHAR" property="name" />
+    </resultMap>
+
+    <select id="queryAllUsers" resultType="UserInfo">
+        select id,name from tbl_users;
+    </select>
+
+    <insert id="insertUsers">
+        insert into tbl_users(id, name) values
+        <foreach collection="userInfoList" item="userInfo" separator=",">
+            (#{userInfo.id}, #{userInfo.name})
+        </foreach>
+    </insert>
+
+    <delete id="deleteUser" >
+        delete from tbl_users where id = #{id}
+    </delete>
+
+</mapper>

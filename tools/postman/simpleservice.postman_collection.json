@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "3824681b-2efa-463d-b998-a5f4696b120f",
+		"name": "simpleservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hello",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{ss_port}}/hello",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{ss_port}}",
+					"path": [
+						"hello"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/users",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{ss_port}}",
+					"path": [
+						"simpleservice",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/users/002",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{ss_port}}",
+					"path": [
+						"simpleservice",
+						"users",
+						"002"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "insert user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\r\n        \"id\": \"002\",\r\n        \"name\": \"aliang2\"\r\n    },\r\n    {\r\n        \"id\": \"003\",\r\n        \"name\": \"aliang3\"\r\n    }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/users",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "{{ss_port}}",
+					"path": [
+						"simpleservice",
+						"users"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
