@@ -13,17 +13,17 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/simpleservice/users")
+    @RequestMapping("/v1/users")
     public List<UserInfo> queryAllUsers() {
         return userService.queryAllUsers();
     }
 
-    @PostMapping("/simpleservice/users")
+    @PostMapping("/v1/users")
     public void insertUsers(@RequestBody List<UserInfo> userInfoList) {
         userService.insertUsers(userInfoList);
     }
 
-    @DeleteMapping("/simpleservice/users/{id}")
+    @DeleteMapping("/v1/users/{id}")
     public int deleteUser(@PathVariable String id ) {
         return userService.deleteUser(id);
     }
