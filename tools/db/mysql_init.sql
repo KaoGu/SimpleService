@@ -1,4 +1,3 @@
-use simpleservicedb;
 
 create table if not exists tbl_users(
 id varchar(255),

@@ -1,10 +1,10 @@
 server:
-  port: 8606
+  port: 8608
   servlet:
     context-path: /simpleservice
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/simpleservicedb_dev?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://127.0.0.1:3306/simpleservicedb?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: User@12345
