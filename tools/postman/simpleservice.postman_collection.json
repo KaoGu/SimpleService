@@ -6,6 +6,208 @@
 	},
 	"item": [
 		{
+			"name": "user",
+			"item": [
+				{
+					"name": "query users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users/003",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"users",
+								"003"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"id\": \"003\",\r\n        \"name\": \"aliang3-dev\"\r\n    },\r\n    {\r\n        \"id\": \"004\",\r\n        \"name\": \"aliang4-dev\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "redis",
+			"item": [
+				{
+					"name": "query redis",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/redis/abc",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"redis",
+								"abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete redis",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/redis/abc",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"redis",
+								"abc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insert user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"key\": \"003\",\r\n    \"value\": \"aliang3-dev\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/redis/abc?timeout=300",
+							"protocol": "http",
+							"host": [
+								"{{ip}}"
+							],
+							"port": "{{ss_port}}",
+							"path": [
+								"simpleservice",
+								"v1",
+								"redis",
+								"abc"
+							],
+							"query": [
+								{
+									"key": "timeout",
+									"value": "300"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "df287a4b-65cc-4715-97f2-165f99651dbb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "aca8016f-a3da-4474-854f-fc5c591be0cb",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
 			"name": "hello",
 			"request": {
 				"method": "GET",
@@ -20,86 +222,6 @@
 					"path": [
 						"simpleservice",
 						"hello"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "query users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users",
-					"protocol": "http",
-					"host": [
-						"{{ip}}"
-					],
-					"port": "{{ss_port}}",
-					"path": [
-						"simpleservice",
-						"v1",
-						"users"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users/001",
-					"protocol": "http",
-					"host": [
-						"{{ip}}"
-					],
-					"port": "{{ss_port}}",
-					"path": [
-						"simpleservice",
-						"v1",
-						"users",
-						"001"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "insert user",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"name": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "[\r\n    {\r\n        \"id\": \"002\",\r\n        \"name\": \"aliang2\"\r\n    },\r\n    {\r\n        \"id\": \"003\",\r\n        \"name\": \"aliang3\"\r\n    }\r\n]",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://{{ip}}:{{ss_port}}/simpleservice/v1/users",
-					"protocol": "http",
-					"host": [
-						"{{ip}}"
-					],
-					"port": "{{ss_port}}",
-					"path": [
-						"simpleservice",
-						"v1",
-						"users"
 					]
 				}
 			},
