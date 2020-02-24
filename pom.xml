@@ -105,6 +105,9 @@
 									<fileset dir="${project.basedir}/target" erroronmissingdir="true">
 										<include name="*.jar"/>
 									</fileset>
+									<fileset dir="${project.basedir}/target/classes" erroronmissingdir="true">
+										<include name="*.yml"/>
+									</fileset>
 								</copy>
 							</target>
 						</configuration>

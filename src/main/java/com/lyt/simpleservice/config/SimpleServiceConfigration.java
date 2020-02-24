@@ -25,6 +25,6 @@ public class SimpleServiceConfigration {
     @Bean("mySimpleInfoRedisClient")
     public RedisClient<SimpleInfo> redisTemplate() {
         log.info("init bean mySimpleInfoRedisClient" + simpleInfoRedisTemplate);
-        return new RedisClient<>(simpleInfoRedisTemplate, rdbName, SimpleInfo.class);
+        return new RedisClient<>(simpleInfoRedisTemplate, rdbName + ":simpleinfo", SimpleInfo.class);
     }
 }

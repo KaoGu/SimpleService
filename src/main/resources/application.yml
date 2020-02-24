@@ -12,6 +12,7 @@ spring:
   redis:
     host: 127.0.0.1
     port: 6379
+    password: User@12345
     #Redis数据库索引（默认为0）
     database: 0
     jedis:
@@ -36,4 +37,4 @@ mybatis:
 
 simpleservice:
   redis:
-    name: simpleservicerdb-dev
+    name: simpleservicerdb

@@ -12,13 +12,13 @@ public class RedisClient<V> {
 
     private RedisTemplate<String, String> redisTemplate;
 
-    private final String rdbName;
+    private final String domainName;
 
     private final Class<V> classValue;
 
-    public RedisClient(RedisTemplate<String, String> redisTemplate, String rdbName, Class<V> classValue) {
+    public RedisClient(RedisTemplate<String, String> redisTemplate, String domainName, Class<V> classValue) {
         this.redisTemplate = redisTemplate;
-        this.rdbName = rdbName;
+        this.domainName = domainName;
         this.classValue = classValue;
     }
 
@@ -28,7 +28,7 @@ public class RedisClient<V> {
     }
 
     private String getDomainKey(String key) {
-        return rdbName + ":" + key;
+        return domainName + ":" + key;
     }
 
     public boolean set(final String key, V value, long timeoutSeconds) {
