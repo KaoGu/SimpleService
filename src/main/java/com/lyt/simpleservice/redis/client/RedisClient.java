@@ -1,15 +1,15 @@
 package com.lyt.simpleservice.redis.client;
 
 import com.lyt.simpleservice.util.json.JsonUtil;
+import lombok.extern.log4j.Log4j2;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.concurrent.TimeUnit;
 
+@Log4j2
 public class RedisClient<V> {
-    private static final Log LOGGER = LogFactory.getLog(RedisClient.class);
-
     private RedisTemplate<String, String> redisTemplate;
 
     private final String domainName;
@@ -32,26 +32,24 @@ public class RedisClient<V> {
     }
 
     public boolean set(final String key, V value, long timeoutSeconds) {
-        boolean result = false;
         try {
             redisTemplate.opsForValue().set(getDomainKey(key),
                     JsonUtil.obj2String(value),
                     timeoutSeconds, TimeUnit.SECONDS);
-            result = true;
+            return true;
         } catch (Exception e) {
-            LOGGER.error("occur exception {}", e);
+            log.error("occur exception", e);
         }
-        return result;
+        return false;
     }
 
     public boolean delete(final String key) {
-        boolean result = false;
         try {
             redisTemplate.delete(getDomainKey(key));
-            result = true;
+            return true;
         } catch (Exception e) {
-            LOGGER.error("occur exception {}", e);
+            log.error("occur exception", e);
         }
-        return result;
+        return false;
     }
 }
