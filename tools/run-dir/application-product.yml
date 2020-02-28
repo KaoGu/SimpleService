@@ -28,6 +28,7 @@ spring:
     encoding: UTF-8
 
 logging:
+  config: etc/log4j2/log4j2.xml
   level:
     com.lyt.simpleservice.mybatis.service: debug
 
