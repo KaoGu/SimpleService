@@ -60,3 +60,7 @@ https://www.cnblogs.com/keeya/p/10101547.html
 - nginx代理
 
 - 前台
+
+- maven deploy
+
+- git hub release
